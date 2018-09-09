@@ -16,7 +16,7 @@ var Schema = mongoose.Schema;
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-  //con.then(() => {
+  con.then(() => {
     
  
     var Bee = new Bug({
@@ -30,9 +30,9 @@ router.get('/', function(req, res, next) {
     });
 
     res.render('index', { title: 'Express 1 running' + new Date().toTimeString() });
-  //}).catch(()=> { 
-  //  res.render('index', { title: 'Express 1 error' + new Date().toTimeString() });
-  //});  
+  }).catch(()=> { 
+    res.render('index', { title: 'Express 1 error' + new Date().toTimeString() });
+  });  
 });
 
 module.exports = router;
